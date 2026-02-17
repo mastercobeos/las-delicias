@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Star, ShoppingCart } from "lucide-react";
-import Image from "next/image";
 
 interface ProductProps {
     id: string;

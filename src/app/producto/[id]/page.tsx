@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { products } from "@/lib/data";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { ShoppingCart, MessageCircle, Check, Truck, Shield } from "lucide-react";
 import Link from "next/link";
 
