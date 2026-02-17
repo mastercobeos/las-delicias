@@ -596,17 +596,17 @@
 
     /* ========== REVIEWS SECTION ========== */
     #reviews {
-        padding: 8rem 0;
+        padding: 6rem 0;
         background-color: var(--color-surface);
     }
 
     .reviews-slider {
-        max-width: 900px;
+        max-width: 700px;
     }
 
     .review-card {
         background: var(--color-cream);
-        padding: 3rem 2.5rem;
+        padding: 2rem 2rem;
         border-radius: 12px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
         margin: 0 5px;
@@ -614,21 +614,21 @@
     }
 
     .review-stars {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .star {
         color: var(--color-accent);
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin: 0 2px;
     }
 
     .review-text {
-        font-size: 1.15rem;
-        line-height: 1.9;
+        font-size: 1rem;
+        line-height: 1.7;
         font-style: italic;
         color: var(--color-text);
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         opacity: 0.85;
     }
 
@@ -636,12 +636,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
 
     .review-author strong {
         color: var(--color-primary);
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .review-date {
