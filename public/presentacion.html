@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Delicias - Playa del Carmen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #006994;
+            /* Ocean Blue */
+            --color-secondary: #f4e4bc;
+            /* Sand */
+            --color-accent: #ff6b6b;
+            /* Sunset Red/Coral */
+            --color-text: #333;
+            --color-text-light: #f9f9f9;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--color-text-light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-accent);
+            margin: 10px auto 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Reusable Components */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #ff5252;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            /* Placeholder gradient since image generation was skipped */
+            background: linear-gradient(135deg, rgba(0, 105, 148, 0.8), rgba(255, 107, 107, 0.6));
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h3 {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--color-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Image Placeholders */
+        .img-placeholder {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-img-placeholder {
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: rotate(2deg);
+            background: linear-gradient(45deg, #006994, #4db6ac);
+        }
+
+        .menu-img-placeholder {
+            height: 250px;
+            background: linear-gradient(to right, #f4e4bc, #ff6b6b);
+        }
+
+        /* About Section */
+        #about {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .about-text h2::after {
+            margin: 10px 0 0;
+        }
+
+        .about-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: rotate(2deg);
+        }
+
+        /* Menu Section */
+        #menu {
+            padding: 100px 0;
+            background-color: var(--color-secondary);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .menu-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        .price {
+            display: block;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contact/Footer */
+        #contact {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Simplified mobile handling */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Las Delicias</a>
+                <ul class="nav-links">
+                    <li><a href="#about">Historia</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#contact">Reservaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container hero-content">
+            <h3>Bienvenido al paraíso</h3>
+            <h1>Las Delicias <br>Playa del Carmen</h1>
+            <p style="color: #eee; max-width: 600px; margin: 0 auto 30px;">
+                Experimenta la fusión perfecta de sabores locales y la brisa del Caribe.
+                Ingredientes frescos, pesca del día y un ambiente inolvidable.
+            </p>
+            <a href="#menu" class="btn">Ver Menú</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Nuestra Esencia</h2>
+                    <p>
+                        Situado en el corazón de la Riviera Maya, <strong>Las Delicias</strong> nació del amor por el
+                        mar y la cocina tradicional.
+                        Nuestros chefs seleccionan cada mañana los mariscos más frescos directamente de los pescadores
+                        locales de Playa del Carmen.
+                    </p>
+                    <p>
+                        Creemos que una buena comida es un ritual. Disfruta de una cena bajo las estrellas, con el
+                        sonido de las olas como banda sonora y
+                        un servicio que te hará sentir en casa.
+                    </p>
+                    <a href="#contact" class="btn" style="background-color: var(--color-primary);">Conoce Más</a>
+                </div>
+                <!-- Image Placeholder -->
+                <div class="img-placeholder about-img-placeholder">Ambiente Tropical</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="container text-center">
+            <h2>Platillos Destacados</h2>
+            <p>Una selección curada de nuestros favoritos, preparados con pasión.</p>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="img-placeholder menu-img-placeholder">Ceviche</div>
+                    <div class="menu-info">
+                        <h3>Ceviche Tropical</h3>
+                        <p>Pesca del día marinada en cítricos, con mango, aguacate y un toque de habanero.</p>
+                        <span class="price">$280 MXN</span>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-placeholder menu-img-placeholder">Langosta</div>
+                    <div class="menu-info">
+                        <h3>Langosta Caribeña</h3>
+                        <p>Cola de langosta fresca a la parrilla, bañada en mantequilla de ajo y hierbas finas.</p>
+                        <span class="price">$1,200 MXN</span>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <!-- Using hero image as placeholder if 3rd image not generated yet -->
+                    <div class="img-placeholder menu-img-placeholder">Pesca del Día</div>
+                    <div class="menu-info">
+                        <h3>Pesca del Día</h3>
+                        <p>Filete fresco preparado al gusto: al mojo de ajo, a la diabla o a la veracruzana.</p>
+                        <span class="price">$350 MXN</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px;">
+                <a href="#" class="btn">Ver Menú Completo (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Visítanos</h2>
+            <div class="contact-info">
+                <p>Calle 38 Norte y Zona Federal Marítima, Playa del Carmen, Q.R.</p>
+                <p>Tel: (984) 123-4567 | Email: hola@lasdeliciasplaya.com</p>
+            </div>
+            <p style="font-style: italic; opacity: 0.7;">Abierto todos los días de 1:00 PM a 11:00 PM</p>
+
+            <footer>
+                &copy; 2026 Las Delicias Playa del Carmen. Todos los derechos reservados.
+            </footer>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Desarrollo Tecnológico - Total Shower</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mexican: {
+                            pink: '#E91E63',    /* Rosa Mexicano */
+                            yellow: '#FFC107',  /* Cempasúchil */
+                            blue: '#00BCD4',    /* Turquesa */
+                            teal: '#009688',    /* Talavera */
+                            cream: '#FFFDE7',   /* Suave crema */
+                            dark: '#3E2723'     /* Chocolate oscuro para texto */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-mexican-cream text-mexican-dark p-8 md:p-16">
+
+    <!-- Control Bar -->
+    <div
+        class="fixed top-0 left-0 w-full bg-mexican-pink shadow-md p-4 flex justify-between items-center no-print z-50">
+        <span class="font-bold text-white">Propuesta Total Shower</span>
+        <button onclick="window.print()"
+            class="bg-white text-mexican-pink px-6 py-2 rounded hover:bg-gray-100 transition-colors font-bold">
+            Descargar PDF / Imprimir
+        </button>
+    </div>
+
+    <!-- Document Container -->
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl p-12 md:p-16 mt-12 mb-12 border-t-8 border-mexican-pink">
+
+        <!-- Header -->
+        <header
+            class="border-b-2 border-mexican-yellow pb-8 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div class="flex-1">
+                <div class="mb-4">
+                    <!-- Placeholder for logo - User needs to save image as logo.png or logo.jpg -->
+                    <div class="flex items-center gap-3">
+                        <!-- Simple CSS recrearion of the logo vibe in case image is missing -->
+                        <div
+                            class="bg-mexican-pink p-3 rounded text-white font-bold text-xl inline-flex items-center gap-2 shadow-lg">
+                            <span>Grow Flow</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                                stroke="#FFC107" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                            </svg>
+                            <span class="font-light text-white text-sm">Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-mexican-pink mb-2 serif tracking-tight">Propuesta de
+                    Proyecto
+                </h1>
+                <p class="text-mexican-teal uppercase tracking-widest text-sm font-bold">Transformación Digital &
+                    E-commerce</p>
+
+                <!-- Contact Info Small -->
+                <div class="mt-4 text-sm text-gray-600 space-y-1">
+                    <p class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-mexican-teal" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        984 228 1177
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-mexican-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        contacto@growflowautomat.com
+                    </p>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-2xl font-bold serif text-mexican-pink">PREPARADO PARA:</div>
+                <div class="text-xl text-mexican-dark font-medium">TOTAL SHOWER</div>
+                <div class="text-sm text-gray-500 mt-1">15 de Febrero, 2026</div>
+                <div class="text-sm text-mexican-blue mt-2 font-medium">
+                    <a href="https://growflowautomat.com" target="_blank">growflowautomat.com</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Executive Summary -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-mexican-pink mb-6 serif">Visión del Proyecto</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                El objetivo es transformar la actual presencia digital de <strong>Total Shower</strong> en una
+                plataforma de comercio electrónico de clase mundial. No solo se trata de vender productos, sino de
+                ofrecer una experiencia de usuario (UX) que refleje el lujo, la calidad y la sofisticación de la marca,
+                integrando la calidez y vivacidad de nuestra cultura.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+                Esta propuesta detalla una estrategia escalonada para implementar un sistema robusto, seguro y escalable
+                que permita a arquitectos, diseñadores y clientes finales explorar y adquirir grifería y tinas de lujo
+                con total confianza.
+            </p>
+        </section>
+
+        <!-- Timeline & Phases -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-mexican-pink mb-8 serif border-b border-mexican-yellow pb-2">Plan de
+                Implementación
+            </h2>
+
+            <!-- Phase 1 -->
+            <div class="mb-10">
+                <div class="flex items-center mb-3">
+                    <span
+                        class="bg-mexican-pink text-white text-xs font-bold px-3 py-1 rounded mr-3 uppercase tracking-wider">Fase
+                        1</span>
+                    <h3 class="text-xl font-bold text-mexican-dark serif">Cimientos y Catálogo Digital</h3>
+                    <span class="ml-auto text-sm text-gray-500 font-medium">Semanas 1-3</span>
+                </div>
+                <ul class="list-disc list-inside text-gray-600 ml-2 space-y-1">
+                    <li>Migración de inventario a base de datos de alto rendimiento.</li>
+                    <li>Diseño de páginas de producto inmersivas con galerías HD.</li>
+                    <li>Sistema de filtrado avanzado (por acabado, tipo, precio).</li>
+                    <li>Optimización total para dispositivos móviles.</li>
+                </ul>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="mb-10">
+                <div class="flex items-center mb-3">
+                    <span
+                        class="bg-mexican-teal text-white text-xs font-bold px-3 py-1 rounded mr-3 uppercase tracking-wider">Fase
+                        2</span>
+                    <h3 class="text-xl font-bold text-mexican-dark serif">Experiencia de Usuario (UX)</h3>
+                    <span class="ml-auto text-sm text-gray-500 font-medium">Semanas 4-6</span>
+                </div>
+                <ul class="list-disc list-inside text-gray-600 ml-2 space-y-1">
+                    <li>Creación de Cuentas de Cliente y Arquitectos.</li>
+                    <li>Funcionalidad de "Lista de Deseos" (Wishlist) para proyectos.</li>
+                    <li>Herramienta de comparación de especificaciones técnicas.</li>
+                    <li>Galería de inspiración con casos de éxito reales.</li>
+                </ul>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="mb-10">
+                <div class="flex items-center mb-3">
+                    <span
+                        class="bg-mexican-blue text-white text-xs font-bold px-3 py-1 rounded mr-3 uppercase tracking-wider">Fase
+                        3</span>
+                    <h3 class="text-xl font-bold text-mexican-dark serif">E-commerce y Transacciones</h3>
+                    <span class="ml-auto text-sm text-gray-500 font-medium">Semanas 7-10</span>
+                </div>
+                <ul class="list-disc list-inside text-gray-600 ml-2 space-y-1">
+                    <li>Implementación de Carrito de Compras persistente.</li>
+                    <li>Integración de Pasarela de Pagos Seguros (Tarjetas, SPEI).</li>
+                    <li>Calculadora automática de costos de envío.</li>
+                    <li>Panel administrativo para gestión de pedidos.</li>
+                </ul>
+            </div>
+
+            <!-- Phase 4 -->
+            <div>
+                <div class="flex items-center mb-3">
+                    <span
+                        class="bg-mexican-yellow text-mexican-dark text-xs font-bold px-3 py-1 rounded mr-3 uppercase tracking-wider">Fase
+                        4</span>
+                    <h3 class="text-xl font-bold text-mexican-dark serif">Lanzamiento y Crecimiento</h3>
+                    <span class="ml-auto text-sm text-gray-500 font-medium">Semanas 11-12</span>
+                </div>
+                <ul class="list-disc list-inside text-gray-600 ml-2 space-y-1">
+                    <li>Estrategia SEO para posicionamiento en Google.</li>
+                    <li>Configuración de analíticas avanzadas (Google Analytics 4).</li>
+                    <li>Pruebas de seguridad y rendimiento.</li>
+                    <li>Despliegue final a producción.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- Investment -->
+        <section class="mb-12 mt-8">
+            <h2 class="text-2xl font-bold text-mexican-pink mb-8 serif border-b border-mexican-yellow pb-2">Inversión
+                Estimada
+            </h2>
+
+            <div class="overflow-hidden rounded-lg border border-gray-200">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="py-4 px-6 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                Concepto</th>
+                            <th class="py-4 px-6 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                Inversión (MXN)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-4 px-6 text-sm text-gray-800">Fase 1: Infraestructura y Catálogo</td>
+                            <td class="py-4 px-6 text-sm text-gray-800 text-right font-mono">$25,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-sm text-gray-800">Fase 2: UX y Fidelización</td>
+                            <td class="py-4 px-6 text-sm text-gray-800 text-right font-mono">$18,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-sm text-gray-800">Fase 3: E-commerce Completo</td>
+                            <td class="py-4 px-6 text-sm text-gray-800 text-right font-mono">$32,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-sm text-gray-800">Fase 4: Lanzamiento y Marketing</td>
+                            <td class="py-4 px-6 text-sm text-gray-800 text-right font-mono">$15,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-sm text-gray-800">Soporte Post-Lanzamiento (1 Mes)</td>
+                            <td class="py-4 px-6 text-sm text-gray-800 text-right font-mono">$5,000</td>
+                        </tr>
+                        <tr class="bg-gray-50 font-bold">
+                            <td class="py-4 px-6 text-mexican-dark">SUBTOTAL</td>
+                            <td class="py-4 px-6 text-mexican-dark text-right font-mono">$95,000</td>
+                        </tr>
+                        <tr class="bg-green-50 text-mexican-teal">
+                            <td class="py-4 px-6 font-bold flex items-center">
+                                Descuento Especial
+                                <span
+                                    class="bg-mexican-teal text-white text-xs px-2 py-0.5 rounded ml-2 uppercase tracking-wide">Promoción</span>
+                            </td>
+                            <td class="py-4 px-6 font-bold text-right font-mono">- $19,000 (20%)</td>
+                        </tr>
+                        <tr class="bg-mexican-pink text-white text-lg">
+                            <td class="py-5 px-6 font-bold serif">INVERSIÓN TOTAL</td>
+                            <td class="py-5 px-6 font-bold text-right font-mono">$76,000 MXN*</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-xs text-gray-500 italic text-right">* Precios antes de impuestos (IVA). Hosting y
+                dominio se cotizan por separado.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-mexican-yellow grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="text-gray-500 text-sm">
+                <p>&copy; 2026 <strong>Grow Flow Automation</strong>.</p>
+                <p class="mt-2">Esta propuesta confidencial es válida por 15 días a partir de la fecha de emisión.</p>
+            </div>
+            <div class="text-right space-y-2 text-sm text-gray-600">
+                <p class="font-bold text-gray-900">¿Dudas o Comentarios?</p>
+                <p>Whatsapp: <span class="font-mono text-gray-800">984 228 1177</span></p>
+                <p>Email: <a href="mailto:contacto@growflowautomat.com"
+                        class="text-mexican-blue hover:underline">contacto@growflowautomat.com</a></p>
+                <p>Web: <a href="https://growflowautomat.com"
+                        class="text-mexican-blue hover:underline">growflowautomat.com</a></p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
