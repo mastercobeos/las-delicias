@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import { RefreshCw, ArrowRightLeft, Repeat } from 'lucide-react';
 
 // SVG Mexico Flag Component
-const MexicoFlag = ({ className = "w-full h-full" }) => (
+const MexicoFlag = ({ className = "w-full h-full" }: { className?: string }) => (
     <svg viewBox="0 0 640 480" className={className}>
         <path fill="#006847" d="M0 0h213.3v480H0z" />
         <path fill="#fff" d="M213.3 0h213.4v480H213.3z" />
@@ -15,7 +15,7 @@ const MexicoFlag = ({ className = "w-full h-full" }) => (
 );
 
 // SVG USA Flag Component
-const USAFlag = ({ className = "w-full h-full" }) => (
+const USAFlag = ({ className = "w-full h-full" }: { className?: string }) => (
     <svg viewBox="0 0 741 390" className={className}>
         <rect width="741" height="390" fill="#bf0a30" />
         <path fill="#fff" d="M0 30h741v30H0m0 60h741v30H0m0 60h741v30H0m0 60h741v30H0m0 60h741v30H0m0 60h741v30H0" />
@@ -25,7 +25,7 @@ const USAFlag = ({ className = "w-full h-full" }) => (
     </svg>
 );
 
-const DualFlagButton = ({ title, children, dark }) => (
+const DualFlagButton = ({ title, children, dark }: { title: string; children: React.ReactNode; dark?: boolean }) => (
     <div className={`p-8 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-6 transition-all border-b-4 ${dark ? 'bg-[#111] border-gray-800' : 'bg-white border-[#1a5c38]'}`}>
         <span className={`text-xs font-black uppercase tracking-widest ${dark ? 'text-gray-600' : 'text-gray-400'}`}>{title}</span>
         {children}

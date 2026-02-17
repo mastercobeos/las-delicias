@@ -6,8 +6,9 @@ import Image from "next/image";
 import { ShoppingCart, MessageCircle, Check, Truck, Shield } from "lucide-react";
 import Link from "next/link";
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-    const product = products.find((p) => p.id === params.id);
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const product = products.find((p) => p.id === id);
 
     if (!product) {
         notFound();
