@@ -484,12 +484,12 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div style={{ marginTop: '3rem' }}>
+                    <div style={{ marginTop: '3rem' }} className="px-4">
                         <a
                             href="https://www.google.com/maps"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn"
+                            className="btn inline-block text-center"
                         >
                             {t("Ver Todas las Reseñas en Google", "View All Google Reviews")}
                         </a>
