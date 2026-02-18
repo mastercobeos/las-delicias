@@ -127,6 +127,7 @@ export default function Home() {
     const [menuSlide, setMenuSlide] = useState(0);
     const [reviewSlide, setReviewSlide] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+    const [isTablet, setIsTablet] = useState(false);
 
     const heroTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const menuTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -144,6 +145,7 @@ export default function Home() {
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768);
+            setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
         };
 
         // Set initial
@@ -175,13 +177,26 @@ export default function Home() {
         }
     }, [maxMenuSlide, menuSlide]);
 
+    const reviewsPerView = isMobile ? 1 : (isTablet ? 2 : 3);
+    const maxReviewSlide = Math.ceil(REVIEWS.length / reviewsPerView) - 1;
+
+    // Ensure current slide is valid on resize for reviews
+    useEffect(() => {
+        if (reviewSlide > maxReviewSlide) {
+            setReviewSlide(0);
+        }
+    }, [maxReviewSlide, reviewSlide]);
+
     // Reset review timer whenever slide changes
     const resetReviewTimer = useCallback(() => {
         if (reviewTimerRef.current) clearInterval(reviewTimerRef.current);
         reviewTimerRef.current = setInterval(() => {
-            setReviewSlide((prev) => (prev + 1) % REVIEWS.length);
-        }, 3000);
-    }, []);
+            setReviewSlide((prev) => {
+                const next = prev + 1;
+                return next > maxReviewSlide ? 0 : next;
+            });
+        }, 5000); // Slower for reviews so people can read
+    }, [maxReviewSlide]);
 
     useEffect(() => {
         resetMenuTimer();
@@ -440,7 +455,15 @@ export default function Home() {
                             style={{ transform: `translateX(-${reviewSlide * 100}%)` }}
                         >
                             {REVIEWS.map((review, index) => (
-                                <div key={index} className="slider-item">
+                                <div
+                                    key={index}
+                                    className="slider-item"
+                                    style={{
+                                        minWidth: `${100 / reviewsPerView}%`,
+                                        maxWidth: `${100 / reviewsPerView}%`,
+                                        padding: '0 10px'
+                                    }}
+                                >
                                     <div className="review-card">
                                         <div className="review-stars">
                                             {[...Array(review.rating)].map((_, i) => (
@@ -459,21 +482,21 @@ export default function Home() {
 
                         <button
                             className="slider-btn slider-btn-prev"
-                            onClick={() => goToReviewSlide((reviewSlide - 1 + REVIEWS.length) % REVIEWS.length)}
+                            onClick={() => goToReviewSlide(reviewSlide <= 0 ? maxReviewSlide : reviewSlide - 1)}
                             aria-label={t("Reseña anterior", "Previous review")}
                         >
                             ‹
                         </button>
                         <button
                             className="slider-btn slider-btn-next"
-                            onClick={() => goToReviewSlide((reviewSlide + 1) % REVIEWS.length)}
+                            onClick={() => goToReviewSlide(reviewSlide >= maxReviewSlide ? 0 : reviewSlide + 1)}
                             aria-label={t("Siguiente reseña", "Next review")}
                         >
                             ›
                         </button>
 
                         <div className="slider-dots">
-                            {REVIEWS.map((_, index) => (
+                            {Array.from({ length: maxReviewSlide + 1 }).map((_, index) => (
                                 <button
                                     key={index}
                                     className={`slider-dot ${index === reviewSlide ? 'active' : ''}`}
