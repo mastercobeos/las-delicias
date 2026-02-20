@@ -218,6 +218,16 @@
         align-items: center;
     }
 
+    /* Reducir padding bottom de navbar en 10px */
+    nav.fixed {
+        padding-bottom: 0.125rem !important;
+    }
+
+    /* Subir el logo un poco */
+    nav.fixed img[alt="Las Delicias"] {
+        margin-top: -8px !important;
+    }
+
     .logo {
         font-family: var(--font-playfair);
         font-size: 1.75rem;
